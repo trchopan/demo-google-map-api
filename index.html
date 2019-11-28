@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      .hidden {
+        display: none;
+      }
+      #locationField {
+        display: flex;
+      }
+      #autocomplete {
+        flex: 1;
+        padding: 1rem;
+        font-size: 1rem;
+        margin: 0.5rem;
+        border: solid 1px black;
+        border-radius: 4px;
+      }
+      #map {
+        height: 80vh;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="loading">Loading google map library...</p>
+    <div id="locationField">
+      <input
+        id="autocomplete"
+        placeholder="Enter your address"
+        onFocus="geolocate()"
+        type="text"
+      />
+    </div>
+
+    <div id="map"></div>
+
+    <pre id="dbObj"></pre>
+
+    <pre id="place_id"></pre>
+
+    <script src="./index.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=<API_KEY>&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
